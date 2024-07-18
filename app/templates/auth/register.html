@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Register</title>
+</head>
+<body>
+
+<div class="container">
+    <h3>Register Page</h3>
+    <form method="post">
+        <div class="form-group">
+            <label for="full_name">{{ form.username.label }}</label>
+            {{ form.username(class="form-control") }}
+            {% for error in form.username.errors %}
+                <div class="text-danger">{{ error }}</div>
+            {% endfor %}
+        </div>
+
+        <div class="form-group">
+            <label for="username">{{form.phone.label }}</label>
+            {{ form.phone(class="form-control")}}
+            {%for error in form.phone.errors %}
+              <div class="text-danger">{{ error }}</div>
+            {% endfor %}
+        </div>
+        <div class="form-group">
+            <label for="email">{{form.email.label }}</label>
+            {{ form.email(class="form-control")}}
+            {%for error in form.email.errors %}
+              <div class="text-danger">{{ error }}</div>
+            {% endfor %}
+        </div>
+
+<!--        <div class="form-group">-->
+<!--            <label for="balance">{{form.balance.label }}</label>-->
+<!--            {{ form.balance(class="form-control")}}-->
+<!--            {%for error in form.balance.errors %}-->
+<!--              <div class="text-danger">{{ error }}</div>-->
+<!--            {% endfor %}-->
+<!--        </div>-->
+        <div class="form-group">
+            <label for="password">{{form.password.label }}</label>
+            {{ form.password(class="form-control")}}
+            {%for error in form.password.errors %}
+              <div class="text-danger">{{ error }}</div>
+            {% endfor %}
+        </div>
+        <div class="form-group">
+            <label for="confirm_password">{{form.confirm_password.label }}</label>
+            {{ form.confirm_password(class="form-control")}}
+            {%for error in form.confirm_password.errors %}
+              <div class="text-danger">{{ error }}</div>
+            {% endfor %}
+        </div>
+        <div class="form-group">
+            {{ form.submit(class="btn btn-primary") }}
+        </div>
+        {{ form.hidden_tag() }}
+    </form>
+</div>
+</body>
+</html>
